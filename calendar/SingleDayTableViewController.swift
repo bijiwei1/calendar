@@ -14,21 +14,50 @@ class SingleDayTableViewController : UITableViewController{
     var monthNum = 0
     var dayNum = 0
     var events: [AnyObject] = Array()
-    
+    var new :String = ""
+    var content: String = ""
     // adding
     @IBAction func addEvent(sender : UIBarButtonItem) {
-        let new = "Test Event \(events.count + 1)"
-        let content = "Empty"
-        let defaultsKey = "\(monthNum)- \(dayNum)"
-        let ce = CalendarEvent(withTitle: new, andDateString: defaultsKey, withDetail: content)
-        let encodedCE = NSKeyedArchiver.archivedDataWithRootObject(ce)
+        createAlert()
+        }
+    func createAlert() {
+    
+        let alert = UIAlertController(title:"Create New Event", message: "Enter title", preferredStyle: UIAlertControllerStyle.Alert)
         
-        events.append(encodedCE)
+        // create cancel action
+        let cancel = UIAlertAction(title:"Cancel", style: UIAlertActionStyle.Cancel, handler:nil)
+        alert.addAction(cancel)
         
-        //For a certain day, every events would be saved as NSUserDefaults
-        NSUserDefaults.standardUserDefaults().setObject(events, forKey: defaultsKey)
+        // Create OK action
+        let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default){(action: UIAlertAction) -> Void in
+            print("OK")
+            let textField = alert.textFields?[0]
+            let textField2 = alert.textFields?[1]
+            self.new = (textField?.text)!
+            self.content = (textField2?.text)!
+            let defaultsKey = "\(self.monthNum)- \(self.dayNum)"
+            let ce = CalendarEvent(withTitle: self.new, andDateString: defaultsKey, withDetail: self.content)
+            let encodedCE = NSKeyedArchiver.archivedDataWithRootObject(ce)
+            
+            self.events.append(encodedCE)
+            
+            //For a certain day, every events would be saved as NSUserDefaults
+            NSUserDefaults.standardUserDefaults().setObject(self.events, forKey: defaultsKey)
+            
+            self.tableView.reloadData()
+
+        }
         
-        tableView.reloadData()
+        alert.addAction(ok)
+        // add text field
+        alert.addTextFieldWithConfigurationHandler{(textField: UITextField) -> Void in
+            textField.placeholder = "Event Name"
+        }
+        alert.addTextFieldWithConfigurationHandler{(textField2: UITextField) -> Void in
+            textField2.placeholder = "Event Detail"
+        }
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     // deleting
@@ -52,7 +81,6 @@ class SingleDayTableViewController : UITableViewController{
             
         }
     }
-    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

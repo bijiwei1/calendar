@@ -13,11 +13,13 @@ class CalendarEvent : NSObject{
     var title : String
     var dateString: String
     var detail : String
+
     
     init(withTitle t : String, andDateString ds : String, withDetail dd : String){
         title = t
         dateString = ds
         detail = dd
+        
     }
     
     init(withCoder coder: NSCoder) {
