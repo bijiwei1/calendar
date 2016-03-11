@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		C206D5841C8CE37E00305EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5831C8CE37E00305EFF /* AppDelegate.swift */; };
-		C206D5861C8CE37E00305EFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5851C8CE37E00305EFF /* ViewController.swift */; };
 		C206D5891C8CE37E00305EFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C206D5871C8CE37E00305EFF /* Main.storyboard */; };
 		C206D58B1C8CE37E00305EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C206D58A1C8CE37E00305EFF /* Assets.xcassets */; };
 		C206D58E1C8CE37E00305EFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C206D58C1C8CE37E00305EFF /* LaunchScreen.storyboard */; };
 		C206D5991C8CE37E00305EFF /* calendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5981C8CE37E00305EFF /* calendarTests.swift */; };
 		C206D5A41C8CE37E00305EFF /* calendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5A31C8CE37E00305EFF /* calendarUITests.swift */; };
+		C206D5B21C8CE9C000305EFF /* MonthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5B11C8CE9C000305EFF /* MonthTableViewController.swift */; };
+		C206D5B41C8CE9D100305EFF /* DaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5B31C8CE9D100305EFF /* DaysTableViewController.swift */; };
+		C206D5B61C8CE9E000305EFF /* SingleDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5B51C8CE9E000305EFF /* SingleDayTableViewController.swift */; };
+		C206D5B81C8CE9EE00305EFF /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5B71C8CE9EE00305EFF /* EventTableViewController.swift */; };
+		C206D5BC1C8D06F300305EFF /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206D5BB1C8D06F300305EFF /* CalendarEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		C206D5801C8CE37E00305EFF /* calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C206D5831C8CE37E00305EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C206D5851C8CE37E00305EFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C206D5881C8CE37E00305EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C206D58A1C8CE37E00305EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C206D58D1C8CE37E00305EFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,11 @@
 		C206D59F1C8CE37E00305EFF /* calendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C206D5A31C8CE37E00305EFF /* calendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarUITests.swift; sourceTree = "<group>"; };
 		C206D5A51C8CE37E00305EFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C206D5B11C8CE9C000305EFF /* MonthTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTableViewController.swift; sourceTree = "<group>"; };
+		C206D5B31C8CE9D100305EFF /* DaysTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysTableViewController.swift; sourceTree = "<group>"; };
+		C206D5B51C8CE9E000305EFF /* SingleDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleDayTableViewController.swift; sourceTree = "<group>"; };
+		C206D5B71C8CE9EE00305EFF /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		C206D5BB1C8D06F300305EFF /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				C206D5831C8CE37E00305EFF /* AppDelegate.swift */,
-				C206D5851C8CE37E00305EFF /* ViewController.swift */,
 				C206D5871C8CE37E00305EFF /* Main.storyboard */,
 				C206D58A1C8CE37E00305EFF /* Assets.xcassets */,
 				C206D58C1C8CE37E00305EFF /* LaunchScreen.storyboard */,
 				C206D58F1C8CE37E00305EFF /* Info.plist */,
+				C206D5B11C8CE9C000305EFF /* MonthTableViewController.swift */,
+				C206D5B31C8CE9D100305EFF /* DaysTableViewController.swift */,
+				C206D5B51C8CE9E000305EFF /* SingleDayTableViewController.swift */,
+				C206D5B71C8CE9EE00305EFF /* EventTableViewController.swift */,
+				C206D5BB1C8D06F300305EFF /* CalendarEvent.swift */,
 			);
 			path = calendar;
 			sourceTree = "<group>";
@@ -256,8 +268,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C206D5861C8CE37E00305EFF /* ViewController.swift in Sources */,
+				C206D5B61C8CE9E000305EFF /* SingleDayTableViewController.swift in Sources */,
+				C206D5B21C8CE9C000305EFF /* MonthTableViewController.swift in Sources */,
 				C206D5841C8CE37E00305EFF /* AppDelegate.swift in Sources */,
+				C206D5B41C8CE9D100305EFF /* DaysTableViewController.swift in Sources */,
+				C206D5BC1C8D06F300305EFF /* CalendarEvent.swift in Sources */,
+				C206D5B81C8CE9EE00305EFF /* EventTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
